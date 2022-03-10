@@ -9,7 +9,12 @@ for i =1:step:size(lambda,2)
     lf = [lf,lambda(i)];
 end
 dqdl = gradient(qf)./gradient(lf);
-dqddl = gradient(gradient(qf))./gradient(gradient(lf));
+dqddl = [gradient(dqdl(1,:),lf);
+        gradient(dqdl(2,:),lf);
+        gradient(dqdl(3,:),lf);
+        gradient(dqdl(4,:),lf);
+        gradient(dqdl(5,:),lf);
+        gradient(dqdl(6,:),lf)];
 %dqdlambda2 = diff(q,1,2)./diff(lambda,1);
 %dqddlambda2 = diff(q,2,2)./diff(lambda,2);
 
