@@ -82,7 +82,7 @@ for i in range(len(curve)):
             #return 999
 
     else:
-        R_tempemp=direction2R(curve_normal[i],-curve[i]+curve[i-1])
+        R_temp=direction2R(curve_normal[i],-curve[i]+curve[i-1])
         R=np.dot(R_temp,Rz(theta[i]))
         try:
  			###get closet config to previous one
